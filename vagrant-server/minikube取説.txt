@@ -1,33 +1,35 @@
-serverに接続後以下のコマンドを実行する
 
-start minikube
+-- serverに接続後以下のコマンドを実行する
+
+$start minikube
 （minikubeのstatusを確認しRunning状態であれば下のコマンドを実行する）
-minikube kubectl -- get po -A
 
-Playbookのインストールがうまくいかなければ以下のコマンドを実行してください
-----
+$minikube kubectl -- get po -A
+
+-- Playbookのインストールがうまくいかなければ以下のコマンドを実行してください
+
 直接ダウンロードによるMinikubeのインストール
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-  && chmod +x minikube
+ $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+    && chmod +x minikube
 
 Minikube実行可能バイナリをパスに追加する簡単な方法を次に示します:
-sudo mkdir -p /usr/local/bin/
-sudo install minikube /usr/local/bin/
+ $ sudo mkdir -p /usr/local/bin/
+ $ sudo install minikube /usr/local/bin/
 
 Linuxへkubectlをインストールする
-sudo curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+ $ sudo curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
 kubectlバイナリを実行可能にしてください。
-sudo chmod +x ./kubectl
+ $ sudo chmod +x ./kubectl
 
 バイナリをPATHの中に移動させてください。
-sudo mv ./kubectl /usr/local/bin/kubectl
+ $ sudo mv ./kubectl /usr/local/bin/kubectl
 
 インストールしたバージョンが最新であることを確認してください:
-kubectl version --client
+ $ kubectl version --client
 
 minikubeをスタートする
-minikube start
+ $ minikube start
 
 minikubeで適切なバージョンのkubectlをダウンロード
-minikube kubectl -- get po -A
+ $ minikube kubectl -- get po -A
