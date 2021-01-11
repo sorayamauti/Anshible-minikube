@@ -1,7 +1,7 @@
 
 -- serverに接続後以下のコマンドを実行する
 
-$start minikube
+$minikube start
 （minikubeのstatusを確認しRunning状態であれば下のコマンドを実行する）
 
 $minikube kubectl -- get po -A
